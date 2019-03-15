@@ -1,0 +1,11 @@
+title: Harry Potter Quotes
+description: A collection of the best Harry Potter quotes.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+theme: minima
+exclude:
+  - Gemfile
+  - Gemfile.lock

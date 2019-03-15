@@ -1,0 +1,44 @@
+@import "variables";
+
+@font-face {
+	font-family: 'Domaine Display';
+	src: url('/assets/fonts/DomaineDisplay-Semibold.ttf')  format('truetype');
+	font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'National';
+	src: url('/assets/fonts/National-Book.ttf')  format('truetype');
+	font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+	font-family: 'Domaine Display';
+	font-weight: bold;
+	color: $text-color;
+	text-align: center;
+	font-size: 30px;
+	line-height: 38px;
+}
+
+p {
+	font-family: 'National';
+	font-size: 20px;
+	margin: 30px auto;
+	color: $text-color;
+	text-align: center;
+}
+
+a {
+	@include smooth-transition;
+	font-family: 'National';
+	color: $text-color;
+	opacity: 0.8;
+	&:hover {
+		text-decoration: none;
+		color: $text-color;
+		opacity: 1;
+	}
+}

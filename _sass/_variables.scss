@@ -1,0 +1,17 @@
+$text-color: #F8FAFF;
+$background-color: #274c5e;
+
+
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+
+@mixin smooth-transition {
+  -webkit-transition: all 0.25s; /* Safari and Chrome */
+  -moz-transition: all 0.25s; /* Firefox */
+  -ms-transition: all 0.25s; /* IE 9 */
+  -o-transition: all 0.25s; /* Opera */
+  transition: all 0.25s;
+}
+
