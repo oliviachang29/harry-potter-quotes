@@ -26,15 +26,15 @@ html, body {
 
 #quote {
 	white-space: pre-wrap;
-	width: 80%;
+	width: 80vw;
 	@media (min-width: $md) {
-		width: 60%;	
+		width: 60vw;	
 	}
 	margin: 50px auto 0;
 }
 
 #context {
-	width: 90%;
+	width: 90vw;
 	margin-top: 40px;
 }
 
@@ -58,7 +58,7 @@ html, body {
 
 #about {
 	font-size: 14px;
-	width: 70%;
+	width: 70vw;
 	margin: 0 auto;
 }
 
