@@ -1,5 +1,6 @@
-const sheety_link = "https://api.sheety.co/5bed7374-8da0-4329-bf1b-6a96532b85a4";
+const sheety_link = "https://api.sheety.co/1d07bd24-d642-49cb-b0e9-96e262386569";
 var items;
+var items_backup; // will stay untouched while items is being edited
 var scroll = new SmoothScroll('a[href*="#"]');
 var current_index;
 
@@ -19,29 +20,25 @@ const bookTitles = {
 
 
 function getNew() {
-	var new_index = Math.floor(Math.random() * items.length);
-	while (new_index == current_index) {
-		new_index = Math.floor(Math.random() * items.length);
+	if (items.length == 0) {
+		items = items_backup.slice()
 	}
-	current_index = new_index;
+	var new_index = Math.floor(Math.random() * items.length);
 	var newItem = items[new_index];
-
 	var context = "";
 	if (bookTitles[newItem.book]) {
 		context = bookTitles[newItem.book];
 	}
-
-	if (newItem.page) {
-		context += ", page " + newItem.page;
-	}
 	$('#quote').html(format(newItem.quote));
 	$('#context').text(context);
 	scroll.animateScroll(0);
+	items.pop(new_index) // this way, we don't get any repeats
 }
 
 jQuery(window).on("load", function(){
     $.getJSON(sheety_link, function(data) {
-		items = data;
+		items = data.slice();
+		items_backup = data.slice();
 		getNew()
 		$('.initially-hidden').css({
 	        opacity: 1,

@@ -26,12 +26,16 @@ html, body {
 
 #quote {
 	white-space: pre-wrap;
-	width: 60%;
+	width: 80%;
+	@media (min-width: $md) {
+		width: 60%;	
+	}
 	margin: 50px auto 0;
 }
 
 #context {
-	/*margin-top: 5%;*/
+	width: 90%;
+	margin-top: 40px;
 }
 
 #reload {
@@ -54,6 +58,8 @@ html, body {
 
 #about {
 	font-size: 14px;
+	width: 70%;
+	margin: 0 auto;
 }
 
 .spacer {
