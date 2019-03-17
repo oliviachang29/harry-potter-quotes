@@ -19,8 +19,13 @@ h1 {
 	font-weight: bold;
 	color: $text-color;
 	text-align: center;
-	font-size: 30px;
-	line-height: 38px;
+	font-size: 28px;
+	line-height: 30px;
+
+	@media (min-width: $md) {
+		font-size: 30px;
+		line-height: 38px;
+	}
 }
 
 p {
