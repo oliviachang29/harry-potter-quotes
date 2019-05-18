@@ -32,7 +32,8 @@ function getNew() {
 	$('#quote').html(format(newItem.quote));
 	$('#context').text(context);
 	scroll.animateScroll(0);
-	items.pop(new_index) // this way, we don't get any repeats
+	// this way, we don't get any repeats
+	items.splice(new_index, 1); // 1 is the number of elements to remove
 }
 
 jQuery(window).on("load", function(){
@@ -50,12 +51,9 @@ $('#reload').on("click",function(){
 	getNew()
 })
 
-$(document).keypress(function(e) {
-  getNew()
-});
-
 $("body").keydown(function(e) {
-  if(e.keyCode == 39) { // right
-    getNew()
-  }
+	getNew()
+	if (e.which == 32) {
+	    return false;
+	}
 });

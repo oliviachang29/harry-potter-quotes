@@ -51,12 +51,9 @@ $('#reload').on("click",function(){
 	getNew()
 })
 
-$(document).keypress(function(e) {
-  getNew()
-});
-
 $("body").keydown(function(e) {
-  if(e.keyCode == 39) { // right
-    getNew()
-  }
+	getNew()
+	if (e.which == 32) {
+	    return false;
+	}
 });
