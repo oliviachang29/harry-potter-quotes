@@ -52,8 +52,11 @@ $('#reload').on("click",function(){
 })
 
 $("body").keydown(function(e) {
-	getNew()
+	if(e.keyCode == 39) {
+		getNew()
+	}
 	if (e.which == 32) {
+		getNew()
 	    return false;
 	}
 });
