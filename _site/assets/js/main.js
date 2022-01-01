@@ -1,4 +1,4 @@
-const sheety_link = "https://api.sheety.co/1d07bd24-d642-49cb-b0e9-96e262386569";
+const sheety_link = "https://opensheet.elk.sh/1S0lMO2Jgl9Ew6t_17ZysBtFYvj1stdNef-F9imQpPaA/Quotes";
 var items;
 var items_backup; // will stay untouched while items is being edited
 var scroll = new SmoothScroll('a[href*="#"]');
@@ -26,10 +26,10 @@ function getNew() {
 	var new_index = Math.floor(Math.random() * items.length);
 	var newItem = items[new_index];
 	var context = "";
-	if (bookTitles[newItem.book]) {
-		context = bookTitles[newItem.book];
+	if (bookTitles[newItem["Book"]]) {
+		context = bookTitles[newItem["Book"]];
 	}
-	$('#quote').html(format(newItem.quote));
+	$('#quote').html(format(newItem["Quote"]));
 	$('#context').text(context);
 	scroll.animateScroll(0);
 	// this way, we don't get any repeats
@@ -39,6 +39,7 @@ function getNew() {
 jQuery(window).on("load", function(){
     $.getJSON(sheety_link, function(data) {
 		items = data.slice();
+		console.log(items)
 		items_backup = data.slice();
 		getNew()
 		$('.initially-hidden').css({
